@@ -6,6 +6,7 @@ import { ToastAction } from "./ui/toast";
 import { Button } from "./ui/button";
 import { Music, PlusCircle, Settings } from "lucide-react";
 import { Input } from "./ui/input";
+import SupportedAudio from "./SupportedAudio";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -76,7 +77,8 @@ const Layout: React.FC<LayoutProps> = ({ children, onFileUpload }) => {
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-300 text-gray-800">
       <aside className="w-full md:w-64 bg-gray-200 p-4 shadow-md">
-        <h1 className="text-3xl font-bold mb-6">Music Vis</h1>
+        <h1 className="text-3xl font-bold mb-2">MusicVis</h1>
+        <p className="text-sm font-light text-gray-400 mb-6">Edit music while visualising its beats</p>
         <nav className="space-y-2">
           <Button variant="outline" className="w-full justify-start">
             <PlusCircle className="mr-2 h-4 w-4" />
@@ -114,7 +116,7 @@ const Layout: React.FC<LayoutProps> = ({ children, onFileUpload }) => {
             </div>
           </label>
         </div>
-        <h1>Something here</h1>
+        <SupportedAudio />
       </aside>
       <main className="flex-1 p-4 md:p-8 overflow-auto">{children}</main>
     </div>
